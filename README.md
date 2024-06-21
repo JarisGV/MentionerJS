@@ -1,6 +1,6 @@
 # MentionerJS
 ## Mention @users, create #hashtags and remove https / www from URLs easily
-## Pure JavaScript - 576 Bytes Only 😮
+## Pure JavaScript - 1 KB Only 😮
 ![mentionerjs-01](https://github.com/jarisgv/mentionerjs/assets/19142770/55f7f137-e8b8-4af9-9048-413c9750b994)
 
 # Live Demo
