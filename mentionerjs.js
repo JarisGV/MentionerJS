@@ -24,7 +24,7 @@ var parserRules = [
   }
 ];
 
-document.querySelectorAll("body, #preview").forEach(function (tag) {
+document.querySelectorAll(".main, #preview").forEach(function (tag) {
   var inner = tag.innerHTML;
   parserRules.forEach(function (rule) {
     inner = inner.replace(rule.pattern, rule.replacement);
