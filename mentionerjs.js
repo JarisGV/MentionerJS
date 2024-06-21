@@ -1,6 +1,6 @@
 // ======================================================
 //
-//  ©2024 - MENTIONER.JS - 1.0.0.240621
+//  ©2024 - MENTIONERJS - 1.0.0
 //  Mention @users, create #hashtags and remove
 //  http(s)/www from URLs easily - Vanilla JavaScript
 //
