@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - MentionerJS 1.0 -  Mention @users #hashtags and remove https / www from URLs easily</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://byjaris.com/code/fonts/inter.css">
+</head>
+<body>
+
+
+
+<div class="hero">
+  <div class="inner">
+    <h2 class="h2">MentionerJS 3.0</h2>
+    <p class="sub">Mention @users, create #hashtags and remove https / www from URLs easily</p>
+    <p class="sub">Pure JavaScript - 576 Bytes Only 😮</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <ul>
+    <li class="ttl">Usernames (Twitter/X):</li>
+    <li>@jaris_gv @jaris.gv @jaris-gv</li>
+    <li>@JarisGV @jarisgv</li>
+
+    <li class="ttl">Ignoring @ in the middle of strings:</li>
+    <li>email@email.com</li>
+
+    <li class="ttl">Hashtags (Instagram):</li>
+    <li>#jarisgv #byjaris #jaris_gv #pikalabs</li>
+
+    <li class="ttl">Removing http(s) and www from URLs:</li>
+    <li>http://byjaris.com https://jarisgv.com</li>
+    <li>http://www.google.com https://www.codepen.io www.gmail.com</li>
+    <li>https://codepen.io/JarisGV</li>
+  </ul>
+  
+<div class="live-tester">
+    <div class="ttl">
+      <h2 class="h2">LIVE TESTER</h2>
+      <h3 class="h3">Type something like: @<span>JarisGV</span>, www<span>.gmail.com</span>, https://<span>byjaris.com</span>... 👇</h3>
+    </div>
+    <textarea id="html" class="html" value="" placeholder="Type here..." autocapitalize="off" autofocus></textarea>
+    <textarea id="css" value="" placeholder="CSS" autocapitalize="off" style="display: none;">body{font-family:system-ui;font-size: 21px;line-height:1.5;white-space: pre;}</textarea>
+    <textarea id="js" value="" placeholder="JavaScript" autocapitalize="off" style="display: none;">
+var parserRules=[{pattern:/(?<!\b)@([A-Za-z0-9._\-]+.*?)/g,replacement:"<a href='//twitter.com/$1' target='_blank'>@$1</a>"},{pattern:/(?<!\b)#([A-Za-z0-9._\-]+.*?)/g,replacement:"<a href='//instagram.com/explore/tags/$1' target='_blank'>#$1</a>"},{pattern:/(?:http:\/\/|(?<!\s)http:\/\/www\.|https:\/\/|https:\/\/www\.|www\.)+([A-Za-z0-9\/._\-]+.*?)/g,replacement:"<a href='https://$1' target='_blank'>$1</a>"}];document.querySelectorAll("body").forEach((function(e){var t=e.innerHTML;parserRules.forEach((function(e){t=t.replace(e.pattern,e.replacement)})),e.innerHTML=t}));    
+    </textarea>
+    <iframe id="preview"></iframe>
+  </div>  
+
+</div>
+
+<!-- ⚠ JQUERY AND THE SCRIPT BELOW ARE NOT REQUIRED
+---    THEY'RE JUST USED FOR LIVE TESTER -->
+
+<script src="https://byjaris.com/code/libs/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Publish output from HTMl, CSS, and JS textareas in the iframe below
+  onload=(document).onkeyup=function(){
+    (document.getElementById("preview").contentWindow.document).write(
+      html.value+"<style>"+css.value+"<\/style><script>"+js.value+"<\/script>"
+    );
+    (document.getElementById("preview").contentWindow.document).close()
+  };
+
+  // Pressing the Tab key inserts 2 spaces instead of shifting focus
+  $("textarea").keydown(function(event){
+    if(event.keyCode === 9){
+      var start = this.selectionStart;
+      var end = this.selectionEnd;
+      var $this = $(this);
+      var value = $this.val();
+      $this.val(value.substring(0, start)+"  "+value.substring(end));
+      this.selectionStart = this.selectionEnd = start+1;
+      event.preventDefault();
+    }
+  });
+
+  // Store contents of textarea in sessionStorage
+  $("textarea").keydown(function(){
+      sessionStorage[$(this).attr("id")] = $(this).val();
+  });
+  $("#html").html(sessionStorage["html"]);
+  $("#css").html(sessionStorage["css"]);
+  $("#js").html(sessionStorage["js"]);
+  function init() {
+    if (sessionStorage["html"]) {
+        $("#html").val(sessionStorage["html"]);
+      }
+    if (sessionStorage["css"]) {
+        $("#css").val(sessionStorage["css"]);
+      }  
+    if (sessionStorage["js"]) {
+        $("#js").val(sessionStorage["js"]);
+      }
+  };
+
+  // Clear textareas with button
+  $(".clearLink").click(clearAll);
+
+  function clearAll(){
+    document.getElementById("html").value = "";
+    document.getElementById("css").value = "";
+    document.getElementById("js").value = "";
+    sessionStorage.clear();
+  }
+
+});
+</script>
+
+  <script src="https://byjaris.com/code/libs/jquery.min.js"></script>
+  <script src="mentionerjs.js"></script>
+
+</body>
+</html>

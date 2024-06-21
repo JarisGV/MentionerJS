@@ -1,0 +1,95 @@
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: linear-gradient(45deg, hsl(285 100% 50%), hsl(210 100% 50%));
+  background-attachment: fixed;
+  font-family: 'Inter';
+  color: #fff;
+  box-sizing: border-box;
+}
+.hero {
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-radius: 0 0 9px 9px;
+  padding: 36px 30px;
+  box-sizing: border-box;
+  background: rgb(0 0 0 / 36%);
+  white-space: balance;
+}
+.hero .inner {
+  max-width: 666px;
+  margin: 0 auto;
+}
+.hero .inner .h2 {
+  font-size: 45px;
+  margin: 0 0 15px 0;
+}
+.hero .inner .sub {
+  font-size: 21px;
+  margin: 0;
+}
+
+.main {
+  max-width: 666px;
+  margin: auto;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+a  {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+.main ul {
+  padding-left: 0;
+}
+.main ul li {
+  list-style: none;
+  line-height: 1.5;
+}
+.main ul li.ttl {
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.live-tester {
+  max-width: 666px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  box-sizing: border-box;
+}
+.live-tester .ttl {
+  width: 100%;
+  text-align: center;
+}
+.live-tester .h2 {
+  font-size: 21px;
+  margin-bottom: 0;
+}
+.live-tester .ttl .h3 {
+  font-size: 18px;
+  font-weight: 300;
+}
+.live-tester .html {
+  width: 100%;
+  min-height:150px;  
+  border-radius: 9px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.live-tester iframe {
+  background: #fff;
+  width:100%;
+  min-height:150px;
+  border-radius: 9px;
+  border: 1px solid #fff;
+}
