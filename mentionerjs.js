@@ -11,12 +11,12 @@
 var parserRules = [
   {
     pattern: /(?<!\b)@([A-Za-z0-9._\-]+.*?)/g,
-    replacement: "<a href='twitter.com/$1' target='_blank'>@$1</a>"
+    replacement: "<a href='//twitter.com/$1' target='_blank'>@$1</a>"
   },
   {
     pattern: /(?<!\b)#([A-Za-z0-9._\-]+.*?)/g,
     replacement:
-      "<a href='instagram.com/explore/tags/$1' target='_blank'>#$1</a>"
+      "<a href='//instagram.com/explore/tags/$1' target='_blank'>#$1</a>"
   },
   {
     pattern: /(?:http:\/\/|(?<!\s)http:\/\/www\.|https:\/\/|https:\/\/www\.|www\.)+([A-Za-z0-9\/._\-]+.*?)/g,
